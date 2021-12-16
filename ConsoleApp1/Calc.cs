@@ -24,8 +24,8 @@ namespace ConsoleApp1
 
                     case "a":
                         Console.WriteLine("Enter the first number");
-                        x=Int32.Parse(Console.ReadLine());
-                        //x = Convert.ToInt32(Console.ReadLine());
+                        //hello world
+                        x = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Enter the second number");
                         y = Convert.ToInt32(Console.ReadLine());
                         res = x + y;
