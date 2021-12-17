@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1.IServices;
+using ConsoleApp1.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,15 +9,15 @@ namespace ConsoleApp1.Services
 {
     internal class ServicesCal: IAddition, IDivision, IMultiplication, ISubtraction
     {
-        public int Add(int a, int b)
+        public Tuple<int,int,int> Add(int a, int b)
         {
             try
             {
-                return a + b;
+                return new Tuple<int, int, int>(a,b,a+b);
             }
             catch (Exception)
             {
-                return 0;
+                return new Tuple<int, int, int>(a,b,0);
             }
 
         }
@@ -70,11 +71,19 @@ namespace ConsoleApp1.Services
             }
            
         }
-        public int Sub(int a, int b)
+        public ResultsSubtraction Sub(int a, int b)
         {
             try
             {
-                return a - b;
+                ResultsSubtraction res = new ResultsSubtraction();
+                res.FirstNumber = a;
+                res.LastNumber = b;
+                res.Output = a - b;
+                res.ResultOutput = (a-b).ToString();
+                
+                return res;
+
+                //return a - b;
             }
             catch( Exception)
             {

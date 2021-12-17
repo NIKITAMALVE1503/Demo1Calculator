@@ -104,23 +104,32 @@ namespace ConsoleApp1
             {
 
                 int res = 0, ch = 0;
-                char again;
+                string again;
                 do
                 {
                      display();
-                    ch = Int32.Parse(Console.ReadLine());
+                    ch = int.Parse(Console.ReadLine());
                     switch (ch)
                     {
                         
                         case 1:
                             getCount();
-                            res = obj.Add(a, b);
+                            var abc = obj.Add(a, b);
+                            res = abc.Item3;
                             res = obj.Add(a, b, c);
+                            Console.WriteLine(abc.Item1);
+                            Console.WriteLine(abc.Item2);
                             Console.WriteLine("\nResult:" + res);
                             break;
                         case 2:
                             getInput();
-                            res = obj.Sub(a, b);
+                            var xyz=obj.Sub(a, b);
+                            
+                            res = xyz.Output;
+                            //res = obj.Sub(a, b);
+                            Console.WriteLine(xyz.FirstNumber);
+                            Console.WriteLine(xyz.ResultOutput);
+                            Console.WriteLine(xyz.LastNumber);
                             Console.WriteLine("\nResult:" + res);
                             break;
                         case 3:
@@ -134,7 +143,7 @@ namespace ConsoleApp1
                             Console.WriteLine("\nResult:" + res);
                             break;
                         case 5:
-                            System.Environment.Exit(res);
+                            //System.Environment.Exit(res);
                             break;
                         default:
                             //res=0;
@@ -142,8 +151,10 @@ namespace ConsoleApp1
                             break;
                     }
                     Console.WriteLine("\nDo you still want to continue? To continue please enter Y/y");
-                    again = Char.Parse(Console.ReadLine());
-                } while (again=='Y' || again =='y');
+                    again = char.Parse(Console.ReadLine()).ToString().ToLower();
+
+
+                } while (again=="y");
 
 
             }

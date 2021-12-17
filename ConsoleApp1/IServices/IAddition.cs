@@ -6,6 +6,6 @@ namespace ConsoleApp1.IServices
 {
     internal interface IAddition
     {
-        public int Add(int a, int b);
+        public  Tuple<int, int,int> Add(int a, int b);
     }
 }
