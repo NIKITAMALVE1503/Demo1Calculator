@@ -143,7 +143,7 @@ namespace ConsoleApp1
                             Console.WriteLine("\nResult:" + res);
                             break;
                         case 5:
-                            //System.Environment.Exit(res);
+                            System.Environment.Exit(res);
                             break;
                         default:
                             //res=0;
